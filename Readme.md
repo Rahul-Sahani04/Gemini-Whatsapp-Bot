@@ -1,8 +1,12 @@
-# WhatsApp Reply Bot README
+# WhatsApp Reply Bot
+
+<!-- use image from the project -->
+![WhatsApp Reply Bot](Assets/banner.jpeg)
 
 ## Overview
 
 This WhatsApp Reply Bot is a Python-based automation script that uses Selenium to interact with WhatsApp Web and Google Gemini API to generate automated replies to incoming messages. The bot is designed to run continuously, monitoring for new messages and replying in real-time.
+
 
 ## Table of Contents
 
@@ -44,13 +48,20 @@ Before running the bot, ensure you have the following installed on your system:
 
 1. **User Data Directory**: Modify the `user_data_dir` path in the `setup_chrome_options` function to point to your Chrome user data directory. This allows the bot to use your existing WhatsApp Web session.
 
-## Running the Bot
+### Configuring the API Key 
+
+1. Obtain a Google Gemini API key from the Google Cloud Console.
+2. Create `config.json` file in the project directory. View the `config.example.json` file for reference.
+3. Add your API key to the `config.json` file.
+
+
+### Running the Bot
 
 1. Ensure all configurations are set correctly.
 2. Run the script:
 
     ```bash
-    python whatsapp_reply_bot.py
+    python newMain.py
     ```
 
 ## Code Explanation
@@ -86,7 +97,7 @@ Generates a reply using the Google Gemini API based on the last received message
 
 Sends a reply message through the WhatsApp Web interface using Selenium.
 
-#### `main(api_key)`
+#### `main()`
 
 The main function that combines all functionalities. It initializes configurations, launches the browser, and enters a loop to check for new messages and send replies.
 
@@ -95,8 +106,7 @@ The main function that combines all functionalities. It initializes configuratio
 ```python
 if __name__ == "__main__":
     banner()
-    api_key = "your_gemini_api_key_here"
-    main(api_key)
+    main()
 ```
 
 ## Libraries Used
